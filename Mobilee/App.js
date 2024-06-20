@@ -47,7 +47,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
-        Filmes e Localizações
+        Localizações
       </Text>
       <TextInput
         style={styles.input}

@@ -23,7 +23,7 @@ const App = () => {
 
   const handleSearch = async () => {
     if (movieTitle.trim() === '') {
-      Alert.alert('Aviso', 'Por favor, insira um título de filme válido.');
+      Alert.alert('Aviso', 'Por favor, insira uma localização válida.');
       return;
     }
     try {
@@ -36,11 +36,11 @@ const App = () => {
       if (data.Response === 'True') {
         setMovieData(data);
       } else {
-        Alert.alert('Erro', 'Filme não encontrado. Verifique o título e tente novamente.');
+        Alert.alert('Erro', 'Localização não encontrado. Verifique o endereço e tente novamente.');
       }
     } catch (error) {
       console.error(error);
-      Alert.alert('Erro', 'Houve um problema na busca do filme. Tente novamente mais tarde.');
+      Alert.alert('Erro', 'Houve um problema na busca do endereço. Tente novamente mais tarde.');
     }
   };
 
@@ -51,11 +51,11 @@ const App = () => {
       </Text>
       <TextInput
         style={styles.input}
-        placeholder="Digite o nome do filme"
+        placeholder="Digite a localização"
         value={movieTitle}
         onChangeText={(text) => setMovieTitle(text)}
       />
-      <Button title="Buscar Filme" onPress={handleSearch} />
+      <Button title="Buscar endereço" onPress={handleSearch} />
 
       {movieData && (
         <View style={styles.movieDataContainer}>
